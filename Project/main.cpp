@@ -3,6 +3,24 @@
 
 using namespace std;
 
+
+int getInt() {
+    int value;
+    while (true) {
+        cin >> value;
+
+        if (cin.fail() || cin.peek() != '\n') {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter an integer.\n";
+        } else {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            break;
+        }
+    }
+    return value;
+}
+
 void menu(Library& library);
 
 void login(Library& library) {
@@ -13,8 +31,7 @@ void login(Library& library) {
 
   while(option != 3) {
     cout << options << endl;
-    cin >> option;
-    cin.ignore();
+    option = getInt();
 
     switch(option) {
       case 1: {
@@ -25,7 +42,7 @@ void login(Library& library) {
         if(user) {
           cout << "Enter your password: ";
           getline(cin, password);
-          if(user->getPasswordHash() == user->getHash().customHash(password)) {
+	  if(user->getPasswordHash() == user->getHash().customHash(password)) {
             cout << "Login successful!\n";
             menu(library);
             return; // Program terminates if user exits the menu function
@@ -84,8 +101,7 @@ void menu(Library& library) {
 
   while(option != 10) {
     cout << options << endl;
-    cin >> option;
-    cin.ignore();
+    option = getInt();
 
     switch (option) {
       case 1: {
@@ -101,10 +117,9 @@ void menu(Library& library) {
         cout << "Enter the author of the book: ";
         getline(cin, author);
         cout << "Enter the year the publication of the book: ";
-        cin >> year;
+        year = getInt();
         cout << "Enter the page count of the book: ";
-        cin >> pages;
-        cin.ignore();
+        pages = getInt();
         cout << "Enter the genre of the book: ";
         getline(cin, genre);
         Book newBook = Book(title, author, year, pages, genre);
