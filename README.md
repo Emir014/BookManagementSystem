@@ -25,10 +25,10 @@ This program acts as a library system where users can create accounts, add books
 
 ## File Structure
 - `main.cpp`: The main entry point for the program.
-- `hasher.cpp`: Implementation of the hash function to store password.
-- `user.cpp` / `User.hpp`: Implementation of user authentication and management.
-- `book.cpp` / `Book.hpp`: Implementation of book management functions.
-- `library.cpp` / `Library.hpp`: Library system functionalities combining users and books.
+- `hasher.cpp` / `hasser.h`: Implementation of the hash function to store password.
+- `user.cpp` / `user.h`: Implementation of user authentication and management.
+- `book.cpp` / `book.h`: Implementation of book management functions.
+- `library.cpp` / `library.h`: Library system functionalities combining users and books.
 - `json.hpp`: JSON library header file for data persistence.
 
 ## Notes
