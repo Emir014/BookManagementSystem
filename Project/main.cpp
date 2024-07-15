@@ -25,8 +25,6 @@ void login(Library& library) {
         if(user) {
           cout << "Enter your password: ";
           getline(cin, password);
-          cout << "user->getPasswordHash(): " << user->getPasswordHash() << endl;
-          cout << "user->getHash().customHash(password): " << user->getHash().customHash(password) << endl;
           if(user->getPasswordHash() == user->getHash().customHash(password)) {
             cout << "Login successful!\n";
             menu(library);
