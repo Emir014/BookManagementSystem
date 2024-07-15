@@ -21,7 +21,7 @@ This program acts as a library system where users can create accounts, add books
     
 2. **Compile the Program**:
     Open a terminal in the project directory and run the following command, specifying all the `.cpp` files and the path to the `json.hpp` file:
-    g++ -o BookManagementSystem main.cpp user.cpp book.cpp library.cpp hasher.cpp -I path/to/json.hpp
+    g++ -o BookManagementSystem main.cpp user.cpp book.cpp library.cpp hasher.cpp -I path/to/json.hpp -I path/to/headerFiles
 
 ## File Structure
 - `main.cpp`: The main entry point for the program.
