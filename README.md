@@ -31,6 +31,13 @@ This program acts as a library system where users can create accounts, add books
 - `library.cpp` / `library.h`: Library system functionalities combining users and books.
 - `json.hpp`: JSON library header file for data persistence.
 
+  ## Robustness to Errors
+The BookManagementSystem is designed to handle errors gracefully:
+- **Input Validation**: User inputs, such as book details and user information, are validated to prevent invalid data from being processed.
+- **Error Handling**: Comprehensive error handling is implemented throughout the program, ensuring that unexpected situations, like file not found or invalid operations, are managed without crashing the program.
+- **Exception Handling**: Uses exception handling to catch and manage errors, providing meaningful error messages to users and logging detailed information for debugging purposes.
+- **Edge Cases**: Special cases, such as empty book lists or unsuccessful operations, are considered and handled appropriately to maintain program stability.
+
 ## Notes
 - The password hashing implemented is for practice purposes and is not secure. For production systems, use a standard and secure hashing library.
 - Ensure the paths to your `.cpp` files and the `json.hpp` file are correctly specified during compilation.
